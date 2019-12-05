@@ -20,6 +20,10 @@ export class DateRangePickerWrapper extends React.Component<any, any> {
     this.onDatesChange = this.onDatesChange.bind(this);
     this.onFocusChange = this.onFocusChange.bind(this);
     this.ngComponent.updateReactDateRange = this.ngComponent.updateReactDateRange.bind(this);
+
+    if (props.locale) {
+      moment.locale(props.locale);
+    }
   }
 
   updateReactDateRangeFromNg(dateRange: any): void {

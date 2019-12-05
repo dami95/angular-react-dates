@@ -19,6 +19,10 @@ var DateRangePickerWrapper = (function (_super) {
         this.onDatesChange = this.onDatesChange.bind(this);
         this.onFocusChange = this.onFocusChange.bind(this);
         this.ngComponent.updateReactDateRange = this.ngComponent.updateReactDateRange.bind(this);
+
+        if (props.locale) {
+            moment.locale(props.locale);
+        }
     }
     DateRangePickerWrapper.prototype.updateReactDateRangeFromNg = function (dateRange) {
         // Update date range
